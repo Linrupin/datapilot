@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>客户端主窗口 · DataPilot</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">
+    <div class="brand-logo"></div>
+    <span>DataPilot · UI 预览</span>
+  </div>
+  <nav>
+    <a href="index.html">首页</a>
+    <a href="01-plugin-popup.html">插件 Popup</a>
+    <a href="02-plugin-side-panel.html">插件 Side Panel</a>
+    <a href="03-client-main.html" class="active">客户端主窗口</a>
+    <a href="04-data-sources.html">数据源管理</a>
+    <a href="05-instances.html">浏览器实例</a>
+  </nav>
+  <div class="meta">桌面客户端 · 1100×620</div>
+</div>
+
+<div class="page">
+  <div class="page-header">
+    <h1>客户端主窗口 · 工作台</h1>
+    <p>桌面端三栏布局：左侧导航 + 工作流列表 / 中间节点画布 + 执行日志 / 右侧 AI 助手。</p>
+    <div class="page-meta">
+      <span class="tag">Tauri</span>
+      <span class="tag success">AI 调度中心</span>
+      <span class="tag warn">实时流式回执</span>
+    </div>
+  </div>
+
+  <div style="display: flex; padding: 0;">
+    <div style="width: 100%; max-width: 1100px; height: 620px; background: var(--color-background-primary); border-radius: var(--border-radius-lg); border: 0.5px solid var(--color-border-tertiary); display: flex; overflow: hidden; margin: 0 auto;">
+
+      <!-- 左侧导航 -->
+      <div style="width: 200px; background: var(--color-background-secondary); padding: 16px 0; display: flex; flex-direction: column;">
+        <div style="padding: 0 16px 16px; display: flex; align-items: center; gap: 8px;">
+          <div style="width: 28px; height: 28px; border-radius: 7px; background: var(--color-background-info); display: flex; align-items: center; justify-content: center;">
+            <div style="width: 14px; height: 14px; border-radius: 3px; background: var(--color-text-info);"></div>
+          </div>
+          <span style="font-weight: 500; font-size: 15px;">DataPilot</span>
+        </div>
+        <div style="padding: 0 12px;">
+          <div style="padding: 8px 12px; background: var(--color-background-primary); border-radius: var(--border-radius-md); font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 8px;">
+            <div style="width: 14px; height: 14px; border-radius: 3px; background: var(--color-text-info);"></div>
+            工作台
+          </div>
+          <div class="demo-clickable" style="padding: 8px 12px; font-size: 13px; color: var(--color-text-secondary); display: flex; align-items: center; gap: 8px;">
+            <div style="width: 14px; height: 14px; border-radius: 3px; background: var(--color-border-tertiary);"></div>
+            数据源
+          </div>
+          <div class="demo-clickable" style="padding: 8px 12px; font-size: 13px; color: var(--color-text-secondary); display: flex; align-items: center; gap: 8px;">
+            <div style="width: 14px; height: 14px; border-radius: 3px; background: var(--color-border-tertiary);"></div>
+            浏览器实例
+          </div>
+          <div class="demo-clickable" style="padding: 8px 12px; font-size: 13px; color: var(--color-text-secondary); display: flex; align-items: center; gap: 8px;">
+            <div style="width: 14px; height: 14px; border-radius: 3px; background: var(--color-border-tertiary);"></div>
+            工作流模板
+          </div>
+          <div class="demo-clickable" style="padding: 8px 12px; font-size: 13px; color: var(--color-text-secondary); display: flex; align-items: center; gap: 8px;">
+            <div style="width: 14px; height: 14px; border-radius: 3px; background: var(--color-border-tertiary);"></div>
+            团队协作
+          </div>
+        </div>
+        <div style="margin-top: auto; padding: 12px 16px; border-top: 0.5px solid var(--color-border-tertiary); display: flex; align-items: center; gap: 8px;">
+          <div style="width: 24px; height: 24px; border-radius: 50%; background: var(--color-background-info); display: flex; align-items: center; justify-content: center; font-size: 11px; color: var(--color-text-info); font-weight: 500;">滨</div>
+          <div style="flex: 1;">
+            <div style="font-size: 12px; font-weight: 500;">滨</div>
+            <div style="font-size: 11px; color: var(--color-text-tertiary);">个人工作区</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 工作流列表面板 -->
+      <div style="width: 220px; border-right: 0.5px solid var(--color-border-tertiary); display: flex; flex-direction: column;">
+        <div style="padding: 16px; border-bottom: 0.5px solid var(--color-border-tertiary);">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+            <span style="font-size: 13px; font-weight: 500;">我的工作流</span>
+            <span style="font-size: 14px; color: var(--color-text-secondary);">+</span>
+          </div>
+          <div style="padding: 6px 10px; background: var(--color-background-tertiary); border-radius: var(--border-radius-md); font-size: 12px; color: var(--color-text-secondary);">搜索工作流...</div>
+        </div>
+        <div style="flex: 1; padding: 8px;">
+          <div style="padding: 10px 12px; background: var(--color-background-secondary); border-radius: var(--border-radius-md); margin-bottom: 6px; border-left: 3px solid var(--color-text-info);">
+            <div style="font-size: 13px; font-weight: 500; margin-bottom: 2px;">京东竞品监控</div>
+            <div style="font-size: 11px; color: var(--color-text-secondary);">每天 9:00 · 运行中</div>
+          </div>
+          <div class="demo-clickable" style="padding: 10px 12px; border-radius: var(--border-radius-md); margin-bottom: 6px;">
+            <div style="font-size: 13px; margin-bottom: 2px;">飞书日报聚合</div>
+            <div style="font-size: 11px; color: var(--color-text-secondary);">手动触发</div>
+          </div>
+          <div class="demo-clickable" style="padding: 10px 12px; border-radius: var(--border-radius-md); margin-bottom: 6px;">
+            <div style="font-size: 13px; margin-bottom: 2px;">抖音评论情感分析</div>
+            <div style="font-size: 11px; color: var(--color-text-secondary);">每小时</div>
+          </div>
+          <div class="demo-clickable" style="padding: 10px 12px; border-radius: var(--border-radius-md); margin-bottom: 6px;">
+            <div style="font-size: 13px; margin-bottom: 2px;">公众号文章归档</div>
+            <div style="font-size: 11px; color: var(--color-text-secondary);">已暂停</div>
+          </div>
+          <div class="demo-clickable" style="padding: 10px 12px; border-radius: var(--border-radius-md);">
+            <div style="font-size: 13px; margin-bottom: 2px;">MySQL 同步飞书</div>
+            <div style="font-size: 11px; color: var(--color-text-secondary);">每 30 分钟</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 中间主区域 -->
+      <div style="flex: 1; display: flex; flex-direction: column; background: var(--color-background-tertiary);">
+        <div style="padding: 12px 20px; border-bottom: 0.5px solid var(--color-border-tertiary); background: var(--color-background-primary); display: flex; align-items: center; gap: 12px;">
+          <span style="font-weight: 500; font-size: 15px;">京东竞品监控</span>
+          <span style="font-size: 11px; padding: 2px 8px; background: var(--color-background-success); color: var(--color-text-success); border-radius: 10px;">运行中</span>
+          <div style="flex: 1;"></div>
+          <span class="demo-clickable" style="font-size: 12px; color: var(--color-text-secondary); padding: 4px 10px; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md);">触发器</span>
+          <span class="demo-clickable" style="font-size: 12px; color: var(--color-text-secondary); padding: 4px 10px; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md);">编辑</span>
+          <span style="font-size: 12px; padding: 4px 10px; background: var(--color-text-info); color: white; border-radius: var(--border-radius-md);">手动运行</span>
+        </div>
+
+        <div style="flex: 1; padding: 24px; display: flex; align-items: center; justify-content: center; gap: 12px;">
+          <div style="width: 110px; background: var(--color-background-primary); border-radius: var(--border-radius-md); padding: 12px; border: 0.5px solid var(--color-border-tertiary); text-align: center;">
+            <div style="width: 28px; height: 28px; border-radius: 7px; background: var(--color-background-info); margin: 0 auto 8px;"></div>
+            <div style="font-size: 12px; font-weight: 500;">打开京东</div>
+            <div style="font-size: 10px; color: var(--color-text-secondary); margin-top: 2px;">已用 2.1s</div>
+          </div>
+          <div style="width: 24px; height: 1px; background: var(--color-border-secondary);"></div>
+          <div style="width: 110px; background: var(--color-background-primary); border-radius: var(--border-radius-md); padding: 12px; border: 0.5px solid var(--color-border-tertiary); text-align: center;">
+            <div style="width: 28px; height: 28px; border-radius: 7px; background: var(--color-background-success); margin: 0 auto 8px;"></div>
+            <div style="font-size: 12px; font-weight: 500;">搜索关键词</div>
+            <div style="font-size: 10px; color: var(--color-text-secondary); margin-top: 2px;">已用 1.4s</div>
+          </div>
+          <div style="width: 24px; height: 1px; background: var(--color-border-secondary);"></div>
+          <div style="width: 110px; background: var(--color-background-primary); border-radius: var(--border-radius-md); padding: 12px; border: 0.5px solid var(--color-border-secondary); text-align: center; border-style: dashed;">
+            <div style="width: 28px; height: 28px; border-radius: 7px; background: var(--color-background-warning); margin: 0 auto 8px;"></div>
+            <div style="font-size: 12px; font-weight: 500;">提取价格</div>
+            <div style="font-size: 10px; color: var(--color-text-warning); margin-top: 2px;">执行中</div>
+          </div>
+          <div style="width: 24px; height: 1px; background: var(--color-border-tertiary);"></div>
+          <div style="width: 110px; background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 12px; text-align: center; opacity: 0.7;">
+            <div style="width: 28px; height: 28px; border-radius: 7px; background: var(--color-border-tertiary); margin: 0 auto 8px;"></div>
+            <div style="font-size: 12px; color: var(--color-text-secondary);">去重聚合</div>
+          </div>
+          <div style="width: 24px; height: 1px; background: var(--color-border-tertiary);"></div>
+          <div style="width: 110px; background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 12px; text-align: center; opacity: 0.7;">
+            <div style="width: 28px; height: 28px; border-radius: 7px; background: var(--color-border-tertiary); margin: 0 auto 8px;"></div>
+            <div style="font-size: 12px; color: var(--color-text-secondary);">写入飞书</div>
+          </div>
+        </div>
+
+        <div style="height: 160px; background: var(--color-background-primary); border-top: 0.5px solid var(--color-border-tertiary); padding: 12px 20px; display: flex; flex-direction: column;">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+            <span style="font-size: 12px; font-weight: 500;">执行日志</span>
+            <span style="font-size: 11px; color: var(--color-text-tertiary);">· 步骤 3/5</span>
+          </div>
+          <div style="flex: 1; overflow: hidden; font-family: var(--font-mono); font-size: 11px; color: var(--color-text-secondary); line-height: 1.6;">
+            [09:00:01] 启动工作流"京东竞品监控"<br>
+            [09:00:03] 打开 https://search.jd.com 完成<br>
+            [09:00:05] 输入关键词"蓝牙耳机"，点击搜索<br>
+            [09:00:12] 选择器".gl-price" 匹配 38 个元素<br>
+            [09:00:14] 选择器自愈：修正 2 个失效选择器<br>
+            <span style="color: var(--color-text-warning);">[09:00:18] 正在抓取第 2 页...</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 右侧 AI 助手 -->
+      <div style="width: 300px; border-left: 0.5px solid var(--color-border-tertiary); display: flex; flex-direction: column; background: var(--color-background-primary);">
+        <div style="padding: 12px 16px; border-bottom: 0.5px solid var(--color-border-tertiary); display: flex; align-items: center; gap: 8px;">
+          <div style="width: 22px; height: 22px; border-radius: 5px; background: var(--color-background-info);"></div>
+          <span style="font-size: 14px; font-weight: 500; flex: 1;">AI 助手</span>
+          <span style="font-size: 11px; color: var(--color-text-tertiary);">清空</span>
+        </div>
+        <div style="flex: 1; padding: 16px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px;">
+          <div style="background: var(--color-background-secondary); padding: 8px 10px; border-radius: var(--border-radius-md); font-size: 12px; max-width: 240px;">
+            这个工作流今天价格波动大吗？
+          </div>
+          <div style="background: var(--color-background-info); padding: 8px 10px; border-radius: var(--border-radius-md); font-size: 12px; max-width: 240px; align-self: flex-end; color: var(--color-text-info);">
+            检测到 3 个 SKU 价格降幅超 5%，详见报告。
+          </div>
+        </div>
+        <div style="padding: 12px 16px; border-top: 0.5px solid var(--color-border-tertiary);">
+          <div style="border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); padding: 8px 10px; display: flex; align-items: center; gap: 8px;">
+            <span style="flex: 1; font-size: 12px; color: var(--color-text-tertiary);">问点什么...</span>
+            <div style="width: 20px; height: 20px; border-radius: 50%; background: var(--color-background-secondary);"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
