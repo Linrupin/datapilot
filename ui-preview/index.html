@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>DataPilot · UI 预览</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">
+    <div class="brand-logo"></div>
+    <span>DataPilot · UI 预览</span>
+  </div>
+  <nav>
+    <a href="index.html" class="active">首页</a>
+    <a href="01-plugin-popup.html">插件 Popup</a>
+    <a href="02-plugin-side-panel.html">插件 Side Panel</a>
+    <a href="03-client-main.html">客户端主窗口</a>
+    <a href="04-data-sources.html">数据源管理</a>
+    <a href="05-instances.html">浏览器实例</a>
+  </nav>
+  <div class="meta">Mock 模式 · v0.1.0</div>
+</div>
+
+<div class="page">
+  <div class="page-header">
+    <h1>DataPilot · 客户端样式预览</h1>
+    <p>本目录展示 M1 MVP 的 5 块核心界面，可点击上方导航逐个查看。所有界面使用统一的设计 token（颜色 / 字号 / 圆角）。</p>
+    <div class="page-meta">
+      <span class="tag">5 块界面</span>
+      <span class="tag success">已验证</span>
+      <span class="tag warn">Mock 模式</span>
+    </div>
+  </div>
+
+  <div class="index-grid">
+    <a href="01-plugin-popup.html" class="index-card demo-clickable">
+      <div class="icon"></div>
+      <div class="title">浏览器插件 Popup</div>
+      <div class="desc">380×500 工具栏弹窗：连接状态 + 快捷动作 + 发送到客户端</div>
+    </a>
+
+    <a href="02-plugin-side-panel.html" class="index-card demo-clickable">
+      <div class="icon" style="background: var(--color-background-warning);"></div>
+      <div class="title">插件 Side Panel</div>
+      <div class="desc">420×580 执行面板：步骤时间线 + 异常提示（无 AI 对话）</div>
+    </a>
+
+    <a href="03-client-main.html" class="index-card demo-clickable">
+      <div class="icon" style="background: var(--color-background-success);"></div>
+      <div class="title">客户端主窗口</div>
+      <div class="desc">1100×620 三栏：导航 + 工作流列表 + 节点画布 + AI 助手</div>
+    </a>
+
+    <a href="04-data-sources.html" class="index-card demo-clickable">
+      <div class="icon" style="background: var(--color-background-danger);"></div>
+      <div class="title">数据源管理</div>
+      <div class="desc">飞书 / MySQL / 本地文件三类连接卡 + 健康指标</div>
+    </a>
+
+    <a href="05-instances.html" class="index-card demo-clickable">
+      <div class="icon" style="background: var(--color-background-secondary);"></div>
+      <div class="title">浏览器实例状态</div>
+      <div class="desc">多实例协作：在线 / 空闲 / 掉线 三态可视化</div>
+    </a>
+  </div>
+
+  <div class="card" style="margin-top: 32px;">
+    <div style="font-size: 13px; font-weight: 500; margin-bottom: 8px;">关于本次预览</div>
+    <div style="font-size: 12px; color: var(--color-text-secondary); line-height: 1.7;">
+      这些页面是 M1 MVP 的视觉稿，仅展示客户端样式与交互。完整功能包括意图解析、浏览器抓取、双通道写入由 FastAPI 后端提供（详见 <code>raw/datapilot/</code>）。
+      当前为 Mock 模式：写入飞书文档与 MySQL 的操作实际落到本地 JSON 文件，便于演示与审计。
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
