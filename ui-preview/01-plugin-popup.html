@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>插件 Popup · DataPilot</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">
+    <div class="brand-logo"></div>
+    <span>DataPilot · UI 预览</span>
+  </div>
+  <nav>
+    <a href="index.html">首页</a>
+    <a href="01-plugin-popup.html" class="active">插件 Popup</a>
+    <a href="02-plugin-side-panel.html">插件 Side Panel</a>
+    <a href="03-client-main.html">客户端主窗口</a>
+    <a href="04-data-sources.html">数据源管理</a>
+    <a href="05-instances.html">浏览器实例</a>
+  </nav>
+  <div class="meta">浏览器插件 · 工具栏弹窗 · 380×500</div>
+</div>
+
+<div class="page">
+  <div class="page-header">
+    <h1>浏览器插件 Popup</h1>
+    <p>Chrome MV3 工具栏弹窗。无 AI 对话，纯确定性动作按钮。"发送到客户端"为与 AI 沟通的桥接入口。</p>
+    <div class="page-meta">
+      <span class="tag">MV3</span>
+      <span class="tag warn">非强占</span>
+      <span class="tag success">Mock 模式</span>
+    </div>
+  </div>
+
+  <div class="frame-label">▼ 实际尺寸预览</div>
+  <div style="display: flex; justify-content: center;">
+    <div style="width: 360px; background: var(--color-background-primary); border-radius: var(--border-radius-lg); border: 0.5px solid var(--color-border-tertiary); overflow: hidden;">
+
+      <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border-bottom: 0.5px solid var(--color-border-tertiary);">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <div style="width: 24px; height: 24px; border-radius: 6px; background: var(--color-background-info); display: flex; align-items: center; justify-content: center;">
+            <div style="width: 12px; height: 12px; border-radius: 3px; background: var(--color-text-info);"></div>
+          </div>
+          <span style="font-weight: 500; font-size: 14px;">DataPilot</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 6px;">
+          <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--color-background-success);"></div>
+          <span style="font-size: 12px; color: var(--color-text-secondary);">已连接客户端</span>
+        </div>
+      </div>
+
+      <div style="background: var(--color-background-secondary); margin: 12px 16px; padding: 10px 12px; border-radius: var(--border-radius-md);">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div style="width: 16px; height: 16px; border-radius: 3px; background: var(--color-background-info); flex-shrink: 0;"></div>
+          <div style="flex: 1; min-width: 0;">
+            <div style="font-size: 11px; color: var(--color-text-secondary);">当前页面</div>
+            <div style="font-size: 13px; font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">京东 - 蓝牙耳机搜索结果</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="padding: 0 16px 12px;">
+        <div style="font-size: 12px; color: var(--color-text-secondary); margin-bottom: 8px;">抓取当前页</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+          <div class="demo-clickable" style="padding: 10px 12px; background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md);">
+            <div style="width: 18px; height: 18px; border-radius: 4px; background: var(--color-background-info); margin-bottom: 6px;"></div>
+            <div style="font-size: 13px; font-weight: 500;">DOM 提取</div>
+            <div style="font-size: 11px; color: var(--color-text-secondary); margin-top: 2px;">结构化字段</div>
+          </div>
+          <div class="demo-clickable" style="padding: 10px 12px; background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md);">
+            <div style="width: 18px; height: 18px; border-radius: 4px; background: var(--color-background-warning); margin-bottom: 6px;"></div>
+            <div style="font-size: 13px; font-weight: 500;">接口抓取</div>
+            <div style="font-size: 11px; color: var(--color-text-secondary); margin-top: 2px;">网络请求</div>
+          </div>
+          <div class="demo-clickable" style="padding: 10px 12px; background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md);">
+            <div style="width: 18px; height: 18px; border-radius: 4px; background: var(--color-background-success); margin-bottom: 6px;"></div>
+            <div style="font-size: 13px; font-weight: 500;">截图</div>
+            <div style="font-size: 11px; color: var(--color-text-secondary); margin-top: 2px;">完整页面</div>
+          </div>
+          <div class="demo-clickable" style="padding: 10px 12px; background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md);">
+            <div style="width: 18px; height: 18px; border-radius: 4px; background: var(--color-text-tertiary); margin-bottom: 6px;"></div>
+            <div style="font-size: 13px; font-weight: 500;">执行 JS</div>
+            <div style="font-size: 11px; color: var(--color-text-secondary); margin-top: 2px;">自定义脚本</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="padding: 0 16px 12px;">
+        <div style="font-size: 12px; color: var(--color-text-secondary); margin-bottom: 8px;">自动化</div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <div class="demo-clickable" style="padding: 10px 12px; background: var(--color-background-secondary); border-radius: var(--border-radius-md); display: flex; align-items: center; gap: 10px;">
+            <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--color-background-danger);"></div>
+            <span style="font-size: 13px; font-weight: 500; flex: 1;">录制操作</span>
+            <span style="font-size: 11px; color: var(--color-text-secondary);">生成工作流</span>
+          </div>
+          <div class="demo-clickable" style="padding: 10px 12px; background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); display: flex; align-items: center; gap: 10px;">
+            <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--color-text-tertiary);"></div>
+            <span style="font-size: 13px; flex: 1;">元素检查器</span>
+            <span style="font-size: 11px; color: var(--color-text-secondary);">选取选择器</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="padding: 0 16px 12px;">
+        <div style="font-size: 12px; color: var(--color-text-secondary); margin-bottom: 8px;">发送到客户端</div>
+        <div class="demo-clickable" style="display: flex; align-items: center; gap: 8px;">
+          <div style="flex: 1; padding: 10px 12px; background: var(--color-background-info); border-radius: var(--border-radius-md); display: flex; align-items: center; gap: 8px;">
+            <div style="width: 14px; height: 14px; border-radius: 3px; background: var(--color-text-info);"></div>
+            <span style="font-size: 13px; font-weight: 500; color: var(--color-text-info);">在客户端用 AI 分析</span>
+          </div>
+        </div>
+        <div style="font-size: 11px; color: var(--color-text-tertiary); margin-top: 6px; line-height: 1.5;">
+          把当前页面上下文传给客户端，由 AI 决定下一步动作
+        </div>
+      </div>
+
+      <div style="padding: 10px 16px; border-top: 0.5px solid var(--color-border-tertiary); display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 11px; color: var(--color-text-tertiary);">v1.0.0</span>
+        <span style="font-size: 11px; color: var(--color-text-tertiary);">设置</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
