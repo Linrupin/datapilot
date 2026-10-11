@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>数据源管理 · DataPilot</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">
+    <div class="brand-logo"></div>
+    <span>DataPilot · UI 预览</span>
+  </div>
+  <nav>
+    <a href="index.html">首页</a>
+    <a href="01-plugin-popup.html">插件 Popup</a>
+    <a href="02-plugin-side-panel.html">插件 Side Panel</a>
+    <a href="03-client-main.html">客户端主窗口</a>
+    <a href="04-data-sources.html" class="active">数据源管理</a>
+    <a href="05-instances.html">浏览器实例</a>
+  </nav>
+  <div class="meta">双通道 · 凭证加密</div>
+</div>
+
+<div class="page">
+  <div class="page-header">
+    <h1>数据源管理</h1>
+    <p>管理 AI 工作流可访问的所有外部数据连接。当前支持飞书多维表格、MySQL、本地文件三类。</p>
+    <div class="page-meta">
+      <span class="tag">凭证 AES-256</span>
+      <span class="tag success">本地优先</span>
+    </div>
+  </div>
+
+  <div style="background: var(--color-background-primary); border-radius: var(--border-radius-lg); border: 0.5px solid var(--color-border-tertiary); padding: 24px;">
+
+    <div style="display: flex; align-items: center; margin-bottom: 24px;">
+      <div>
+        <h2 style="margin: 0; font-size: 18px; font-weight: 500;">数据源</h2>
+        <p style="margin: 4px 0 0; font-size: 13px; color: var(--color-text-secondary);">管理 AI 工作流可访问的所有外部数据连接</p>
+      </div>
+      <div style="flex: 1;"></div>
+      <div style="display: flex; gap: 8px;">
+        <span class="demo-clickable" style="padding: 6px 14px; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); font-size: 13px;">导入配置</span>
+        <span style="padding: 6px 14px; background: var(--color-text-info); color: white; border-radius: var(--border-radius-md); font-size: 13px;">+ 新建连接</span>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 24px;">
+      <div class="card">
+        <div style="display: flex; align-items: center; margin-bottom: 12px;">
+          <div style="width: 36px; height: 36px; border-radius: 8px; background: var(--color-background-info); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 500; color: var(--color-text-info);">飞</div>
+          <div style="flex: 1; margin-left: 10px;">
+            <div style="font-size: 14px; font-weight: 500;">飞书 · 多维表格</div>
+            <div style="font-size: 11px; color: var(--color-text-secondary);">tenant_app · 竞品监控组</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--color-background-success);"></div>
+            <span style="font-size: 11px; color: var(--color-text-secondary);">在线</span>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px;">
+          <div style="background: var(--color-background-secondary); padding: 8px 10px; border-radius: var(--border-radius-md);">
+            <div style="font-size: 11px; color: var(--color-text-secondary);">表数量</div>
+            <div style="font-size: 16px; font-weight: 500; margin-top: 2px;">12</div>
+          </div>
+          <div style="background: var(--color-background-secondary); padding: 8px 10px; border-radius: var(--border-radius-md);">
+            <div style="font-size: 11px; color: var(--color-text-secondary);">本月调用</div>
+            <div style="font-size: 16px; font-weight: 500; margin-top: 2px;">3,847</div>
+          </div>
+        </div>
+        <div style="display: flex; gap: 6px;">
+          <span class="demo-clickable" style="flex: 1; padding: 5px; text-align: center; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); font-size: 11px;">配置</span>
+          <span class="demo-clickable" style="flex: 1; padding: 5px; text-align: center; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); font-size: 11px;">测试</span>
+          <span class="demo-clickable" style="flex: 1; padding: 5px; text-align: center; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); font-size: 11px;">权限</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="display: flex; align-items: center; margin-bottom: 12px;">
+          <div style="width: 36px; height: 36px; border-radius: 8px; background: var(--color-background-warning); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 500; color: var(--color-text-warning);">DB</div>
+          <div style="flex: 1; margin-left: 10px;">
+            <div style="font-size: 14px; font-weight: 500;">MySQL · 京东投放</div>
+            <div style="font-size: 11px; color: var(--color-text-secondary);">CynosDB · social_media</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--color-background-success);"></div>
+            <span style="font-size: 11px; color: var(--color-text-secondary);">在线</span>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px;">
+          <div style="background: var(--color-background-secondary); padding: 8px 10px; border-radius: var(--border-radius-md);">
+            <div style="font-size: 11px; color: var(--color-text-secondary);">表数量</div>
+            <div style="font-size: 16px; font-weight: 500; margin-top: 2px;">28</div>
+          </div>
+          <div style="background: var(--color-background-secondary); padding: 8px 10px; border-radius: var(--border-radius-md);">
+            <div style="font-size: 11px; color: var(--color-text-secondary);">慢查询</div>
+            <div style="font-size: 16px; font-weight: 500; margin-top: 2px; color: var(--color-text-warning);">2</div>
+          </div>
+        </div>
+        <div style="display: flex; gap: 6px;">
+          <span class="demo-clickable" style="flex: 1; padding: 5px; text-align: center; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); font-size: 11px;">配置</span>
+          <span class="demo-clickable" style="flex: 1; padding: 5px; text-align: center; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); font-size: 11px;">测试</span>
+          <span class="demo-clickable" style="flex: 1; padding: 5px; text-align: center; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); font-size: 11px;">权限</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="display: flex; align-items: center; margin-bottom: 12px;">
+          <div style="width: 36px; height: 36px; border-radius: 8px; background: var(--color-background-success); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 500; color: var(--color-text-success);">文</div>
+          <div style="flex: 1; margin-left: 10px;">
+            <div style="font-size: 14px; font-weight: 500;">本地文件</div>
+            <div style="font-size: 11px; color: var(--color-text-secondary);">OSS 直传 · 12 个对象</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--color-background-success);"></div>
+            <span style="font-size: 11px; color: var(--color-text-secondary);">就绪</span>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px;">
+          <div style="background: var(--color-background-secondary); padding: 8px 10px; border-radius: var(--border-radius-md);">
+            <div style="font-size: 11px; color: var(--color-text-secondary);">总大小</div>
+            <div style="font-size: 16px; font-weight: 500; margin-top: 2px;">182 MB</div>
+          </div>
+          <div style="background: var(--color-background-secondary); padding: 8px 10px; border-radius: var(--border-radius-md);">
+            <div style="font-size: 11px; color: var(--color-text-secondary);">支持格式</div>
+            <div style="font-size: 13px; font-weight: 500; margin-top: 4px;">CSV/XLSX/JSON</div>
+          </div>
+        </div>
+        <div style="display: flex; gap: 6px;">
+          <span class="demo-clickable" style="flex: 1; padding: 5px; text-align: center; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); font-size: 11px;">上传</span>
+          <span class="demo-clickable" style="flex: 1; padding: 5px; text-align: center; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); font-size: 11px;">查看</span>
+          <span class="demo-clickable" style="flex: 1; padding: 5px; text-align: center; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); font-size: 11px;">权限</span>
+        </div>
+      </div>
+
+      <div class="demo-clickable" style="border: 0.5px dashed var(--color-border-secondary); border-radius: var(--border-radius-lg); padding: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 200px;">
+        <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--color-background-secondary); display: flex; align-items: center; justify-content: center; margin-bottom: 8px;">
+          <div style="width: 16px; height: 16px; position: relative;">
+            <div style="position: absolute; left: 50%; top: 0; width: 1.5px; height: 16px; background: var(--color-text-secondary); transform: translateX(-50%);"></div>
+            <div style="position: absolute; left: 0; top: 50%; width: 16px; height: 1.5px; background: var(--color-text-secondary); transform: translateY(-50%);"></div>
+          </div>
+        </div>
+        <span style="font-size: 13px; color: var(--color-text-secondary);">连接新数据源</span>
+        <span style="font-size: 11px; color: var(--color-text-tertiary); margin-top: 4px;">支持 8 种类型</span>
+      </div>
+    </div>
+
+    <div style="background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 16px 20px; display: flex; align-items: center; gap: 16px;">
+      <div style="width: 36px; height: 36px; border-radius: 8px; background: var(--color-background-warning); display: flex; align-items: center; justify-content: center;">
+        <div style="width: 16px; height: 16px; border-radius: 50%; background: var(--color-text-warning);"></div>
+      </div>
+      <div style="flex: 1;">
+        <div style="font-size: 13px; font-weight: 500;">凭证保险箱已启用</div>
+        <div style="font-size: 11px; color: var(--color-text-secondary); margin-top: 2px;">所有连接凭证 AES-256 加密存储，使用你的主密钥派生加密</div>
+      </div>
+      <span class="demo-clickable" style="padding: 6px 14px; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); font-size: 12px;">查看详情</span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
