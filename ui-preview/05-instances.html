@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>浏览器实例 · DataPilot</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">
+    <div class="brand-logo"></div>
+    <span>DataPilot · UI 预览</span>
+  </div>
+  <nav>
+    <a href="index.html">首页</a>
+    <a href="01-plugin-popup.html">插件 Popup</a>
+    <a href="02-plugin-side-panel.html">插件 Side Panel</a>
+    <a href="03-client-main.html">客户端主窗口</a>
+    <a href="04-data-sources.html">数据源管理</a>
+    <a href="05-instances.html" class="active">浏览器实例</a>
+  </nav>
+  <div class="meta">多实例协作 · 状态监控</div>
+</div>
+
+<div class="page">
+  <div class="page-header">
+    <h1>浏览器实例状态</h1>
+    <p>管理连接到本客户端的所有浏览器插件实例。支持多实例协作、自动负载均衡与故障转移。</p>
+    <div class="page-meta">
+      <span class="tag">3 状态</span>
+      <span class="tag success">实时心跳</span>
+    </div>
+  </div>
+
+  <div style="background: var(--color-background-primary); border-radius: var(--border-radius-lg); border: 0.5px solid var(--color-border-tertiary); padding: 24px;">
+
+    <div style="display: flex; align-items: center; margin-bottom: 8px;">
+      <div>
+        <h2 style="margin: 0; font-size: 18px; font-weight: 500;">浏览器实例</h2>
+        <p style="margin: 4px 0 0; font-size: 13px; color: var(--color-text-secondary);">管理连接到本客户端的所有浏览器插件实例</p>
+      </div>
+      <div style="flex: 1;"></div>
+      <div style="display: flex; gap: 8px;">
+        <span class="demo-clickable" style="padding: 6px 14px; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); font-size: 13px;">导出诊断</span>
+        <span style="padding: 6px 14px; background: var(--color-text-info); color: white; border-radius: var(--border-radius-md); font-size: 13px;">配对新设备</span>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 20px 0;">
+      <div style="background: var(--color-background-secondary); padding: 12px; border-radius: var(--border-radius-md);">
+        <div style="font-size: 11px; color: var(--color-text-secondary);">在线实例</div>
+        <div style="font-size: 22px; font-weight: 500; margin-top: 4px;">3</div>
+      </div>
+      <div style="background: var(--color-background-secondary); padding: 12px; border-radius: var(--border-radius-md);">
+        <div style="font-size: 11px; color: var(--color-text-secondary);">今日任务</div>
+        <div style="font-size: 22px; font-weight: 500; margin-top: 4px;">142</div>
+      </div>
+      <div style="background: var(--color-background-secondary); padding: 12px; border-radius: var(--border-radius-md);">
+        <div style="font-size: 11px; color: var(--color-text-secondary);">成功率</div>
+        <div style="font-size: 22px; font-weight: 500; margin-top: 4px; color: var(--color-text-success);">96.5%</div>
+      </div>
+      <div style="background: var(--color-background-secondary); padding: 12px; border-radius: var(--border-radius-md);">
+        <div style="font-size: 11px; color: var(--color-text-secondary);">平均延迟</div>
+        <div style="font-size: 22px; font-weight: 500; margin-top: 4px;">38<span style="font-size: 13px; color: var(--color-text-secondary); margin-left: 2px;">ms</span></div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+
+      <div class="card">
+        <div style="display: flex; align-items: center;">
+          <div style="width: 40px; height: 40px; border-radius: 8px; background: var(--color-background-info); display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 500; color: var(--color-text-info);">M</div>
+          <div style="flex: 1; margin-left: 12px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 14px; font-weight: 500;">滨的 MacBook Pro</span>
+              <span style="font-size: 11px; padding: 2px 8px; background: var(--color-background-success); color: var(--color-text-success); border-radius: 10px;">在线</span>
+              <span style="font-size: 11px; color: var(--color-text-secondary);">Chrome 128 · MV3</span>
+            </div>
+            <div style="font-size: 12px; color: var(--color-text-secondary); margin-top: 2px;">本机 · 上次活跃 刚刚 · 已运行 6h 24m</div>
+          </div>
+          <div style="text-align: right; margin-right: 16px;">
+            <div style="font-size: 11px; color: var(--color-text-secondary);">延迟 / 今日任务</div>
+            <div style="font-size: 13px; font-weight: 500; margin-top: 2px;">12ms · 89 次</div>
+          </div>
+          <span class="demo-clickable" style="padding: 5px 12px; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); font-size: 12px;">详情</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="display: flex; align-items: center;">
+          <div style="width: 40px; height: 40px; border-radius: 8px; background: var(--color-background-warning); display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 500; color: var(--color-text-warning);">D</div>
+          <div style="flex: 1; margin-left: 12px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 14px; font-weight: 500;">家用台式机 · Chrome</span>
+              <span style="font-size: 11px; padding: 2px 8px; background: var(--color-background-warning); color: var(--color-text-warning); border-radius: 10px;">空闲</span>
+              <span style="font-size: 11px; color: var(--color-text-secondary);">Chrome 127 · MV3</span>
+            </div>
+            <div style="font-size: 12px; color: var(--color-text-secondary); margin-top: 2px;">192.168.1.12 · 上次活跃 12 分钟前</div>
+          </div>
+          <div style="text-align: right; margin-right: 16px;">
+            <div style="font-size: 11px; color: var(--color-text-secondary);">延迟 / 今日任务</div>
+            <div style="font-size: 13px; font-weight: 500; margin-top: 2px;">68ms · 41 次</div>
+          </div>
+          <span class="demo-clickable" style="padding: 5px 12px; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); font-size: 12px;">详情</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="display: flex; align-items: center;">
+          <div style="width: 40px; height: 40px; border-radius: 8px; background: var(--color-background-danger); display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 500; color: var(--color-text-danger);">!</div>
+          <div style="flex: 1; margin-left: 12px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 14px; font-weight: 500;">Edge · 公司笔记本</span>
+              <span style="font-size: 11px; padding: 2px 8px; background: var(--color-background-danger); color: var(--color-text-danger); border-radius: 10px;">掉线</span>
+              <span style="font-size: 11px; color: var(--color-text-secondary);">Edge 126 · MV3</span>
+            </div>
+            <div style="font-size: 12px; color: var(--color-text-secondary); margin-top: 2px;">10.0.0.42 · 最后心跳 2 小时前 · 连续 3 次心跳超时</div>
+          </div>
+          <div style="text-align: right; margin-right: 16px;">
+            <div style="font-size: 11px; color: var(--color-text-secondary);">今日失败</div>
+            <div style="font-size: 13px; font-weight: 500; margin-top: 2px; color: var(--color-text-danger);">12 次</div>
+          </div>
+          <span style="padding: 5px 12px; background: var(--color-text-info); color: white; border-radius: var(--border-radius-md); font-size: 12px;">重新连接</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 16px; background: var(--color-background-info); padding: 12px 16px; border-radius: var(--border-radius-lg); display: flex; align-items: center; gap: 12px;">
+      <div style="width: 28px; height: 28px; border-radius: 6px; background: var(--color-background-primary); display: flex; align-items: center; justify-content: center;">
+        <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--color-text-info);"></div>
+      </div>
+      <div style="flex: 1;">
+        <div style="font-size: 13px; font-weight: 500;">支持多实例协作</div>
+        <div style="font-size: 11px; color: var(--color-text-secondary); margin-top: 2px;">多个浏览器实例可同时接入同一个客户端，自动负载均衡与故障转移</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
